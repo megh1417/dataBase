@@ -4,7 +4,7 @@ class Form{
         this.title = createElement('h2');
         this.button = createButton("start game");
         this.greeting = createElement('h2');
-        
+        this.reset = createButton('reset');
 
     }    
     
@@ -20,6 +20,7 @@ class Form{
         this.title.position(displayWidth/1.5 + 150 , 140);
         this.input.position(displayWidth/1.5 + 150 ,210);
         this.button.position(displayWidth/1.5 + 200 , 240); 
+        this.reset.position(displayWidth/1.5 - 30, 150);
       
 
         this.button.mousePressed(()=>{
@@ -41,9 +42,12 @@ class Form{
             
         });
 
-        
-
-
+        this.reset.mousePressed(()=>{
+            player.updateCount(0);
+            game.update(0);
+            var removePlayers = database.ref("players");
+            removePlayers.remove();
+        });
 
     }
 

@@ -21,7 +21,7 @@ function preload(){
 
 function setup(){
 
-    // create the connection with your database
+    // create the connection with your databasewda
     database = firebase.database();
     createCanvas(displayWidth - 20, displayHeight - 30);
     game = new Game ();
