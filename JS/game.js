@@ -45,7 +45,7 @@ class Game {
         // call static fucntion
 
         Player.getPlayerInfo();
-        
+        player.getCarsAtEnd();
         // megh : 0 // index =1
         // abcd : 0  //index = 2
         // eeee : 0 // index = 3
@@ -92,8 +92,10 @@ class Game {
             player.update();
         }
 
-        if(player.distance>3800){
+        if(player.distance===3800){
             gameState= 2;
+            player.rank += 1; 
+            Player.updateCarsAtEnd(player.rank);
         }
 
         drawSprites();
@@ -102,5 +104,7 @@ class Game {
 
     end(){
        console.log ("game End");
+       console.log(player.rank);
+      
     }
 }

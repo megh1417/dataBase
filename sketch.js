@@ -44,6 +44,7 @@ function draw(){
 
     if(gameState === 2){
          game.end();
+         //game.update(2); - Done when CarsAtEnd=4 and gamestate=2
     }
     //drawSprites();
 }
